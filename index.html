@@ -28,39 +28,36 @@
         :root {
             --primary-red: #E41E26;
             --primary-red-hover: #C41A1F;
-        }
-
-        html.dark {
-            --bg-base: #1a1a1a;
-            --bg-panel: #21212B;
+            --diamond-color: #00D9FF;
+            --bg-dark: #1a1a23;
+            --bg-panel: #252530;
+            --bg-section: #1e1e2b;
             --text-title: #FFFFFF;
             --text-primary: #B8B8B8;
             --text-secondary: #888888;
             --border-color: #333333;
-            --line-color: #404040;
+            --line-color: #2a2a35;
         }
 
-        html:not(.dark) {
-            --bg-base: #FFFFFF;
-            --bg-panel: #F5F5F5;
-            --text-title: #1a1a1a;
-            --text-primary: #555555;
-            --text-secondary: #999999;
-            --border-color: #EEEEEE;
-            --line-color: #CCCCCC;
+        html {
+            background-color: var(--bg-dark);
         }
 
         body {
-            background-color: var(--bg-base);
+            background-color: var(--bg-dark);
             color: var(--text-primary);
         }
 
         .bg-bg-base {
-            background-color: var(--bg-base);
+            background-color: var(--bg-dark);
         }
 
         .bg-bg-panel {
             background-color: var(--bg-panel);
+        }
+
+        .bg-\[\#F9F9F9\].dark\:bg-\[\#21212B\] {
+            background-color: var(--bg-section) !important;
         }
 
         .text-text-title {
@@ -79,16 +76,162 @@
             border-color: var(--line-color);
         }
 
+        .border-line\/50 {
+            border-color: rgba(42, 42, 53, 0.5);
+        }
+
         .border-box-border {
             border-color: var(--border-color);
         }
 
+        /* Header */
         header {
             @apply sticky top-0 z-10;
+            background-color: var(--bg-dark) !important;
+            border-bottom-color: rgba(255, 255, 255, 0.05) !important;
         }
 
-        .h-14 {
+        header .h-14 {
             height: 56px;
+            background-color: var(--bg-dark);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Animación del checkmark */
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .text-\[80px\] {
+            animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Diamond color */
+        .diamond-icon {
+            filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(10000%) hue-rotate(160deg);
+        }
+
+        /* Sección hero */
+        .min-h-\[250px\] {
+            background-color: var(--bg-section);
+            position: relative;
+        }
+
+        .min-h-\[250px\]::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 35, 0.7) 0%, rgba(37, 37, 48, 0.5) 100%);
+            pointer-events: none;
+        }
+
+        /* Grid y detalles */
+        dl {
+            background-color: transparent;
+        }
+
+        dl dt {
+            color: var(--text-primary);
+            border-bottom-color: var(--line-color);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--line-color);
+        }
+
+        dl dt:first-of-type {
+            border-top: 1px solid var(--line-color);
+        }
+
+        dl dd {
+            color: var(--text-title);
+            border-bottom-color: var(--line-color);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--line-color);
+        }
+
+        /* Bonus section */
+        .rounded-\[5px\] {
+            background-color: var(--bg-panel);
+            border-color: var(--line-color);
+        }
+
+        .rounded-\[5px\] li {
+            border-bottom-color: var(--line-color);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .rounded-\[5px\] li:last-child {
+            border-bottom: none;
+        }
+
+        /* Diamond text color */
+        .text-\[80px\] {
+            color: #34D17D;
+        }
+
+        /* Button */
+        a.border-primary-red {
+            background-color: var(--primary-red);
+            border-color: var(--primary-red);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        a.border-primary-red:hover {
+            background-color: var(--primary-red-hover);
+            border-color: var(--primary-red-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(228, 30, 38, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            border-top-color: rgba(255, 255, 255, 0.05) !important;
+            background-color: var(--bg-dark);
+        }
+
+        footer .mx-auto {
+            border-top-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Links */
+        a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        /* Divider */
+        .h-2 {
+            background-color: var(--line-color);
+        }
+
+        /* Dark mode fixes */
+        .dark\:bg-\[#21212B\] {
+            background-color: var(--bg-panel);
+        }
+
+        .dark\:border-t-line\/50 {
+            border-top-color: rgba(42, 42, 53, 0.5);
         }
 
         @media (min-width: 768px) {
@@ -178,13 +321,13 @@
             </div>
         </div>
 
-        <section class="mx-auto flex w-full grow flex-col gap-y-4 p-4 md:max-w-[552px]">
-            <dl class="grid grid-cols-2 gap-x-3.5">
+        <section class="mx-auto flex w-full grow flex-col gap-y-4 p-4 md:max-w-[552px]" style="background-color: var(--bg-dark);">
+            <dl class="grid grid-cols-2 gap-x-3.5" style="background-color: transparent; border: 1px solid var(--line-color); border-radius: 8px; padding: 1rem; overflow: hidden;">
                 <dt class="py-3 text-sm/none">Monto total</dt>
                 <dd class="break-words py-3 text-end text-sm/[18px] font-medium">
-                    <div class="flex items-center justify-end">
-                        <img class="me-1.5 h-3 w-3" src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/point.png">
-                        110
+                    <div class="flex items-center justify-end gap-1">
+                        <span style="color: #00D9FF;">💎</span>
+                        <span style="color: #00D9FF;">110</span>
                     </div>
                 </dd>
                 <div class="col-span-2 my-1 w-full">
@@ -193,8 +336,8 @@
                             <div>Precio inicial</div>
                             <div class="text-end font-medium">
                                 <div class="flex items-center gap-1">
-                                    <img class="h-3 w-3 shrink-0 object-contain" src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/point.png" alt="Diamond">
-                                    <div>100</div>
+                                    <span style="color: #00D9FF;">💎</span>
+                                    <span style="color: #00D9FF;">100</span>
                                 </div>
                             </div>
                         </li>
@@ -202,8 +345,8 @@
                             <div>+ Bonus General</div>
                             <div class="text-end font-medium">
                                 <div class="flex items-center gap-1">
-                                    <img class="h-3 w-3 shrink-0 object-contain" src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/point.png" alt="Diamond">
-                                    <div>10</div>
+                                    <span style="color: #00D9FF;">💎</span>
+                                    <span style="color: #00D9FF;">10</span>
                                 </div>
                             </div>
                         </li>
