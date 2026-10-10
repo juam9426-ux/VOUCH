@@ -79,6 +79,10 @@
             border-color: var(--line-color);
         }
 
+        .border-box-border {
+            border-color: var(--border-color);
+        }
+
         header {
             @apply sticky top-0 z-10;
         }
@@ -105,124 +109,155 @@
                             <path d="M8.3578 35.869H7.93021L7.8517 34.7418H7.83371C7.41505 35.6264 6.57613 35.9998 5.67711 35.9998C3.71231 35.9998 2.73438 34.4644 2.73438 32.7732C2.73438 31.0823 3.71231 29.5469 5.67711 29.5469C6.98666 29.5469 8.0523 30.2495 8.27969 31.6026H7.68549C7.60725 30.8913 6.86444 30.05 5.67711 30.05C4.02647 30.05 3.32831 31.42 3.32831 32.7732C3.32831 34.1263 4.02647 35.4961 5.67711 35.4961C7.05624 35.4961 7.8601 34.5337 7.83371 33.2242H5.71203V32.7207H8.3578V35.869Z" fill="#E41E26"/>
                         </svg>
                     </div>
-                    <div class="ms-1.5 h-5 border-e border-line/50 md:ms-3 md:h-3.5"></div>
+                    <div class="ms-1.5 h-5 border-e border-short-line md:ms-3 md:h-3.5"></div>
                     <div class="text-xs font-medium text-text-title max-md:max-w-24 md:text-base/5">Centro Oficial de Recargas</div>
                 </a>
-                <div class="flex min-w-0 items-stretch gap-2 md:gap-4">
-                    <button class="flex items-center gap-1 rounded-md border border-line/50 bg-transparent px-3 py-2 text-xs md:text-sm">
-                        <img class="h-4 w-4" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH+SURBVHgB7da9S1tRGMfx3z25YMDSaxAaSkFLC4EMDSK00BehQwstVLB01KmLg1NdbMf+A+1UaJe66KyC4ODgoKBOkTgEFEVF0RiNuYMoaO7xPBcU3y5K8CXP9flA3p5k+XLOubmAEEIIcXdZ9BT9MPI4AtUNbTWYSQ3K0Pwiip+tDipEn+d5nclkcsH247Qk7YdZKNt9x0EikcBtM2FwXfdzPp9/m81mG22lI7/LXbVKpJRCLBaj0FihUPivLAstCCGK1Fo3qMv8uPVdHNzQSho1FwY+e1KNtvf8Ag9dGEhxTSkH9Q+i4Mg+PXhzKubTy1r/9UdbHUYz7tF8cHwT7vY+Kt2ZwDET0dxei46WRyfmtJL0KJqo7//mWcSRc7dolwlo/zVzJiIzt41XHWn0DOfAReAZ7DURi2u7J2aD4xtYyu2Ck8DAungUqaf3/C35p3/FnzWl+N0P2EFf0JVzNFM0W3XWXzW6qPztTMCpttmcPxK4ghT1sWv6aEvSFZQ+18erwEngCh7/SzhEsUvg5VK3apxJIHf2l71JXIXnyw52hrKoJFWrOVjrr1Ma4aXlDHIngdxJIHcSyJ0EcieB3EkgdxLIHQUWEWImUKcRUp7GgCqVIl/N+y2Ez5b21Df1cGJqoVRSjZbWfWaor/FxU8yR0yPURG0QQggh7rADvtO6a5U1GlQAAAAASUVORK5CYII=" alt="Chile">
-                        <span>Chile</span>
-                        <span class="text-xs">ES</span>
-                    </button>
-                    <button class="h-8 w-8 rounded-full overflow-hidden">
-                        <img src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/icon.png" alt="Avatar" class="h-full w-full">
-                    </button>
+                <div class="flex min-w-0 items-stretch gap-2 md:gap-[18px]">
+                    <div class="relative flex h-full min-w-0 items-center">
+                        <button class="flex min-w-0 items-center gap-1 rounded-md border border-box-border bg-bg-inputbox px-[7px] py-[5px] text-sm/none outline-none transition-colors hover:border-box-border-focus focus-visible:border-box-border-focus max-md:max-w-40" type="button">
+                            <img class="h-4 w-4 shrink-0 object-contain" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH+SURBVHgB7da9S1tRGMfx3z25YMDSaxAaSkFLC4EMDSK00BehQwstVLB01KmLg1NdbMf+A+1UaJe66KyC4ODgoKBOkTgEFEVF0RiNuYMoaO7xPBcU3y5K8CXP9flA3p5k+XLOubmAEEIIcXdZ9BT9MPI4AtUNbTWYSQ3K0Pwiip+tDipEn+d5nclkcsH247Qk7YdZKNt9x0EikcBtM2FwXfdzPp9/m81mG22lI7/LXbVKpJRCLBaj0FihUPivLAstCCGK1Fo3qMv8uPVdHNzQSho1FwY+e1KNtvf8Ag9dGEhxTSkH9Q+i4Mg+PXhzKubTy1r/9UdbHUYz7tF8cHwT7vY+Kt2ZwDET0dxei46WRyfmtJL0KJqo7//mWcSRc7dolwlo/zVzJiIzt41XHWn0DOfAReAZ7DURi2u7J2aD4xtYyu2Ck8DAungUqaf3/C35p3/FnzWl+N0P2EFf0JVzNFM0W3XWXzW6qPztTMCpttmcPxK4ghT1sWv6aEvSFZQ+18erwEngCh7/SzhEsUvg5VK3apxJIHf2l71JXIXnyw52hrKoJFWrOVjrr1Ma4aXlDHIngdxJIHcSyJ0EcieB3EkgdxLIHQUWEWImUKcRUp7GgCqVIl/N+y2Ez5b21Df1cGJqoVRSjZbWfWaor/FxU8yR0yPURG0QQggh7rADvtO6a5U1GlQAAAAASUVORK5CYII=">
+                            <div class="min-w-0 overflow-x-hidden text-ellipsis whitespace-nowrap">Chile</div>
+                            <div class="h-2.5 border-e border-e-short-line"></div>
+                            <span translate="no">ES</span>
+                        </button>
+                    </div>
+                    <div class="relative flex items-center">
+                        <div class="relative">
+                            <button class="block rounded-full transition-opacity hover:opacity-70" type="button">
+                                <div class="relative h-[30px] w-[30px]">
+                                    <div class="h-full w-full overflow-hidden rounded-full">
+                                        <img class="h-full w-full" src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/icon.png" alt="User avatar">
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
     <main class="flex flex-1 flex-col">
-        <div class="bg-[#2a2a35]">
-            <div class="mx-auto flex min-h-[300px] w-full flex-col items-center justify-center px-6 py-12 text-center md:max-w-[600px]" style="background-image: url('https://assets.garena.com/gop/mshop/www/live/assets/free-fire-0273c16e.jpg'); background-size: cover; background-position: center;">
-                <svg width="80" height="80" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-6">
-                    <g clip-path="url(#clip0)">
-                        <path d="M45 0C56.9774 0 67.8619 4.6794 75.925 12.3098L70.539 16.8614C63.792 10.734 54.832 7 45 7C24.0132 7 7 24.0132 7 45C7 65.9868 24.0132 83 45 83C65.9868 83 83 65.9868 83 45C83 38.173 81.1997 31.7666 78.0479 26.2294L82.8327 20.6244C87.3679 27.6487 90 36.017 90 45C90 69.8528 69.8528 90 45 90C20.1472 90 0 69.8528 0 45C0 20.1472 20.1472 0 45 0Z" fill="url(#paint0)"/>
-                        <path d="M26.674 42.1661L40.2705 59.7618C41.1683 60.9236 42.9017 60.9816 43.8751 59.8822L83.2346 15.4295C83.9457 14.6263 83.9094 13.4085 83.1517 12.6491C82.3925 11.8883 81.1721 11.8508 80.3677 12.5635L41.5 46.9997L31.1913 37.9281C29.9592 36.8437 28.0966 36.9031 26.9359 38.0637C25.8291 39.1706 25.7169 40.9275 26.674 42.1661Z" fill="url(#paint1)"/>
+        <div class="bg-[#F9F9F9] dark:bg-[#21212B]">
+            <div class="mx-auto flex min-h-[250px] w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-6 pb-9 pt-8 text-center md:max-w-[600px] md:bg-contain" style="background-image: url('https://assets.garena.com/gop/mshop/www/live/assets/free-fire-0273c16e.jpg');">
+                <svg width="1em" height="1em" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-5 text-[80px]">
+                    <g clip-path="url(#clip0_1200_20221)">
+                        <path d="M45 0C56.9774 0 67.8619 4.6794 75.925 12.3098L70.539 16.8614C63.792 10.734 54.832 7 45 7C24.0132 7 7 24.0132 7 45C7 65.9868 24.0132 83 45 83C65.9868 83 83 65.9868 83 45C83 38.173 81.1997 31.7666 78.0479 26.2294L82.8327 20.6244C87.3679 27.6487 90 36.017 90 45C90 69.8528 69.8528 90 45 90C20.1472 90 0 69.8528 0 45C0 20.1472 20.1472 0 45 0Z" fill="url(#paint0_linear_1200_20221)"></path>
+                        <path d="M26.674 42.1661L40.2705 59.7618C41.1683 60.9236 42.9017 60.9816 43.8751 59.8822L83.2346 15.4295C83.9457 14.6263 83.9094 13.4085 83.1517 12.6491C82.3925 11.8883 81.1721 11.8508 80.3677 12.5635L41.5 46.9997L31.1913 37.9281C29.9592 36.8437 28.0966 36.9031 26.9359 38.0637C25.8291 39.1706 25.7169 40.9275 26.674 42.1661Z" fill="url(#paint1_linear_1200_20221)"></path>
                     </g>
                     <defs>
-                        <linearGradient id="paint0" x1="44.8584" y1="0" x2="44.8584" y2="90" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#34D17D"/>
-                            <stop offset="1" stop-color="#21C46D"/>
+                        <linearGradient id="paint0_linear_1200_20221" x1="44.8584" y1="0" x2="44.8584" y2="90" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#34D17D"></stop>
+                            <stop offset="1" stop-color="#21C46D"></stop>
                         </linearGradient>
-                        <linearGradient id="paint1" x1="44.8584" y1="0" x2="44.8584" y2="90" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#34D17D"/>
-                            <stop offset="1" stop-color="#21C46D"/>
+                        <linearGradient id="paint1_linear_1200_20221" x1="44.8584" y1="0" x2="44.8584" y2="90" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#34D17D"></stop>
+                            <stop offset="1" stop-color="#21C46D"></stop>
                         </linearGradient>
-                        <clipPath id="clip0">
-                            <rect width="90" height="90" fill="white"/>
+                        <clipPath id="clip0_1200_20221">
+                            <rect width="90" height="90" fill="white"></rect>
                         </clipPath>
                     </defs>
                 </svg>
-                <h1 class="text-2xl font-bold text-text-title mb-2">¡Pago finalizado!</h1>
-                <div class="text-text-primary">
-                    <p class="text-sm mb-1">ID del movimiento</p>
-                    <p class="text-base font-medium flex items-center justify-center gap-2">8202722689463271878 <button class="text-gray-400 hover:text-white"><svg width="16" height="16" viewBox="0 0 80 80" fill="currentColor"><path d="M33 4C26.9249 4 22 8.92487 22 15V15.64H28V15C28 12.2386 30.2386 10 33 10H65C67.7614 10 70 12.2386 70 15V47C70 49.7614 67.7614 52 65 52H64.36V58H65C71.0751 58 76 53.0751 76 47V15C76 8.92487 71.0751 4 65 4H33Z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M15 22C8.92487 22 4 26.9249 4 33V65C4 71.0751 8.92487 76 15 76H47C53.0751 76 58 71.0751 58 65V33C58 26.9249 53.0751 22 47 22H15ZM10 33C10 30.2386 12.2386 28 15 28H47C49.7614 28 52 30.2386 52 33V65C52 67.7614 49.7614 70 47 70H15C12.2386 70 10 67.7614 10 65V33Z"/></svg></button></p>
+                <div class="mb-2 text-xl/none font-bold text-text-title">¡Pago finalizado!</div>
+                <div class="text-sm/[22px] text-text-primary link-inside flex flex-col gap-5">
+                    <div>ID del movimiento<br>
+                    8202722689463271878
+                    <button class="ms-1 align-middle" aria-label="Copy" onclick="copyToClipboard('8202722689463271878')">
+                        <svg width="1em" height="1em" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-text-title">
+                            <g>
+                                <g>
+                                    <path d="M33 4C26.9249 4 22 8.92487 22 15V15.64H28V15C28 12.2386 30.2386 10 33 10H65C67.7614 10 70 12.2386 70 15V47C70 49.7614 67.7614 52 65 52H64.36V58H65C71.0751 58 76 53.0751 76 47V15C76 8.92487 71.0751 4 65 4H33Z" fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15 22C8.92487 22 4 26.9249 4 33V65C4 71.0751 8.92487 76 15 76H47C53.0751 76 58 71.0751 58 65V33C58 26.9249 53.0751 22 47 22H15ZM10 33C10 30.2386 12.2386 28 15 28H47C49.7614 28 52 30.2386 52 33V65C52 67.7614 49.7614 70 47 70H15C12.2386 70 10 67.7614 10 65V33Z" fill="currentColor"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <section class="mx-auto flex w-full grow flex-col gap-y-6 p-6 md:max-w-[600px]">
-            <dl class="grid grid-cols-2 gap-4">
-                <dt class="text-sm text-text-secondary">Monto total</dt>
-                <dd class="text-right text-base font-medium text-text-title">
-                    <div class="flex items-center justify-end gap-1">
-                        <img class="h-4 w-4" src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/point.png">
-                        <span>110</span>
+        <section class="mx-auto flex w-full grow flex-col gap-y-4 p-4 md:max-w-[552px]">
+            <dl class="grid grid-cols-2 gap-x-3.5">
+                <dt class="py-3 text-sm/none">Monto total</dt>
+                <dd class="break-words py-3 text-end text-sm/[18px] font-medium">
+                    <div class="flex items-center justify-end">
+                        <img class="me-1.5 h-3 w-3" src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/point.png">
+                        110
                     </div>
                 </dd>
-
-                <div class="col-span-2 bg-bg-panel rounded border border-line/30 p-4">
-                    <div class="space-y-3 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-text-secondary">Precio inicial</span>
-                            <div class="flex items-center gap-1">
-                                <img class="h-3 w-3" src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/point.png">
-                                <span>100</span>
+                <div class="col-span-2 my-1 w-full">
+                    <ul class="flex flex-col gap-3 rounded-[5px] border border-line/50 bg-bg-panel p-3 text-xs/[14px] md:text-sm/[18px]">
+                        <li class="flex items-start justify-between gap-2">
+                            <div>Precio inicial</div>
+                            <div class="text-end font-medium">
+                                <div class="flex items-center gap-1">
+                                    <img class="h-3 w-3 shrink-0 object-contain" src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/point.png" alt="Diamond">
+                                    <div>100</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-text-secondary">+ Bonus General</span>
-                            <div class="flex items-center gap-1">
-                                <img class="h-3 w-3" src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/point.png">
-                                <span>10</span>
+                        </li>
+                        <li class="flex items-start justify-between gap-2">
+                            <div>+ Bonus General</div>
+                            <div class="text-end font-medium">
+                                <div class="flex items-center gap-1">
+                                    <img class="h-3 w-3 shrink-0 object-contain" src="https://cdn-gop.garenanow.com/gop/app/0000/100/067/point.png" alt="Diamond">
+                                    <div>10</div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
-
-                <dt class="text-sm text-text-secondary">Precio</dt>
-                <dd class="text-right text-base font-medium text-text-title">CLP$ 830</dd>
-
-                <dt class="text-sm text-text-secondary">Juego</dt>
-                <dd class="text-right text-base font-medium text-text-title">Free Fire</dd>
-
-                <dt class="text-sm text-text-secondary">Método de pago</dt>
-                <dd class="text-right text-base font-medium text-text-title">PayPal</dd>
-
-                <dt class="text-sm text-text-secondary">Tiempo de movimiento</dt>
-                <dd class="text-right text-base font-medium text-text-title">10-10-2026, 10:48:22 a. m.</dd>
+                <dt class="py-3 text-sm/none">Precio</dt>
+                <dd class="break-words py-3 text-end text-sm/[18px] font-medium"><span class="items-center [text-decoration:inherit] justify-end flex">CLP$ 830</span></dd>
+                <dt class="py-3 text-sm/none">Juego</dt>
+                <dd class="break-words py-3 text-end text-sm/[18px] font-medium">Free Fire</dd>
+                <dt class="py-3 text-sm/none">Método de pago</dt>
+                <dd class="break-words py-3 text-end text-sm/[18px] font-medium">PayPal</dd>
+                <dt class="py-3 text-sm/none">Tiempo de movimiento</dt>
+                <dd class="break-words py-3 text-end text-sm/[18px] font-medium">10-10-2026, 10:48:22 a. m.</dd>
             </dl>
-
-            <a href="/" class="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-center text-base">Volver a Página de Inicio</a>
+            <a class="mt-4 inline-flex items-center justify-center gap-1.5 rounded-md border py-1 text-center leading-none transition-colors border-primary-red bg-primary-red text-white hover:bg-primary-red-hover hover:border-primary-red-hover px-5 text-base font-bold h-11 w-full" href="/">Volver a Página de Inicio</a>
         </section>
     </main>
 
     <footer class="">
         <div class="mx-auto w-full max-w-5xl">
-            <hr class="hidden border-t border-line/30 md:block">
-            <div class="flex flex-col items-center gap-3 p-6 text-center text-xs text-text-secondary md:items-start md:flex-row md:justify-between">
-                <div>© Garena Online. Todos los derechos reservados.</div>
-                <div class="flex flex-wrap items-center justify-center gap-4 md:justify-end">
-                    <a href="#" class="hover:text-text-title">Preguntas</a>
-                    <span>|</span>
-                    <a href="#" class="hover:text-text-title">Help Center</a>
-                    <span>|</span>
-                    <a href="#" class="hover:text-text-title">Términos y Condiciones</a>
-                    <span>|</span>
-                    <a href="#" class="hover:text-text-title">Política de privacidad</a>
+            <hr class="hidden border-t border-t-short-line/50 dark:border-t-line/50 md:block">
+            <div class="flex flex-col items-center gap-3 p-4 text-center text-xs text-text-secondary max-md:pb-5 md:items-start">
+                <div class="flex flex-col items-center gap-3 leading-none md:w-full md:flex-row md:justify-between">
+                    <div class="flex-1 md:text-start">© Garena Online. Todos los derechos reservados.</div>
+                    <div class="flex flex-1 flex-wrap items-center justify-center gap-y-1 md:justify-end">
+                        <div class="flex">
+                            <a class="transition-opacity hover:opacity-70" href="/faq">Preguntas</a>
+                        </div>
+                        <div class="flex">
+                            <div class="mx-4 h-2 w-px bg-short-line"></div>
+                            <a class="transition-opacity hover:opacity-70" href="https://soporte.garena.com">Help Center</a>
+                        </div>
+                        <div class="flex">
+                            <div class="mx-4 h-2 w-px bg-short-line"></div>
+                            <a class="transition-opacity hover:opacity-70" href="http://content.garena.com/legal/tos/tos_es.html">Términos y Condiciones</a>
+                        </div>
+                        <div class="flex">
+                            <div class="mx-4 h-2 w-px bg-short-line"></div>
+                            <a class="transition-opacity hover:opacity-70" href="http://content.garena.com/legal/pp/pp_es.html">Política de privacidad</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <div id="portal"><!--portal-html--></div>
-    <script id="msp-analytic" async src="https://assets.garena.com/gop/mshop/www/live/static/lib/analytic.91def2c7.iife.js?domain=sa"></script>
+
+    <script id="msp-analytic" async="" src="https://assets.garena.com/gop/mshop/www/live/static/lib/analytic.91def2c7.iife.js?domain=sa"></script>
 
     <script>
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
-                alert('ID copiado');
+                alert('ID copiado al portapapeles');
             }).catch(() => {
                 const textarea = document.createElement('textarea');
                 textarea.value = text;
@@ -230,9 +265,11 @@
                 textarea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textarea);
-                alert('ID copiado');
+                alert('ID copiado al portapapeles');
             });
         }
     </script>
+
+    <div id="headlessui-portal-root"><div data-headlessui-portal=""><div></div></div></div>
 </body>
 </html>
