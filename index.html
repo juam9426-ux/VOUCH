@@ -1,19 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark" dir="ltr">
 <head>
+    <script src="https://www.paypal.com/sdk/js?client-id=ART4tfYPEJ8doGQRQTSz3oezwyhubs-mV2cJYsYBr_AKAIHAOB7S2Lb3hnd0C9_9WVcLjXkSn7m9bFqM&currency=CLP" data-js-sdk-library="react-paypal-js"></script>
+    <script type="text/javascript" async src="https://static.hotjar.com/c/hotjar-6592937.js?sv=7"></script>
+    <script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=G-TCKCH5ZJG0&cx=c&gtm=4e6a72"></script>
+    <script async src="https://datadome.garena.com/tags.js"></script>
+    <script async src="https://connect.facebook.net/en_US/fbevents.js"></script>
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-WGFN7FF5"></script>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://assets.garena.com/gop/mshop/www/live/static/favicon.ico">
+    <link rel="preconnect" href="https://contentgarena-a.akamaihd.net">
+    <link rel="preconnect" href="https://cdn-gop.garenanow.com">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Centro de Recarga Garena - Pago Finalizado</title>
+    <meta name="description" content="La página oficial para recargar diamantes en Free Fire.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         }
 
         :root {
             --primary-red: #E41E26;
             --primary-red-hover: #C41A1F;
+        }
+
+        html.dark {
+            --bg-base: #1a1a1a;
+            --bg-panel: #21212B;
+            --text-title: #FFFFFF;
+            --text-primary: #B8B8B8;
+            --text-secondary: #888888;
+            --border-color: #333333;
+            --line-color: #404040;
+        }
+
+        html:not(.dark) {
             --bg-base: #FFFFFF;
             --bg-panel: #F5F5F5;
             --text-title: #1a1a1a;
@@ -24,279 +51,54 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-            background-color: #F9F9F9;
+            background-color: var(--bg-base);
             color: var(--text-primary);
-            line-height: 1.5;
+        }
+
+        .bg-bg-base {
+            background-color: var(--bg-base);
+        }
+
+        .bg-bg-panel {
+            background-color: var(--bg-panel);
+        }
+
+        .text-text-title {
+            color: var(--text-title);
+        }
+
+        .text-text-primary {
+            color: var(--text-primary);
+        }
+
+        .text-text-secondary {
+            color: var(--text-secondary);
+        }
+
+        .border-line {
+            border-color: var(--line-color);
+        }
+
+        .border-box-border {
+            border-color: var(--border-color);
         }
 
         header {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background-color: var(--bg-base);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            @apply sticky top-0 z-10;
         }
 
-        .header-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .h-14 {
+            height: 56px;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .logo-text {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--text-title);
-        }
-
-        main {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><rect fill="%23f0f0f0" width="1200" height="300"/></svg>');
-            background-size: cover;
-            background-position: center;
-            min-height: 250px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem 1.5rem;
-            color: white;
-        }
-
-        .success-icon {
-            font-size: 80px;
-            margin-bottom: 1.25rem;
-            color: #34D17D;
-        }
-
-        .hero-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-title);
-        }
-
-        .transaction-id {
-            font-size: 0.875rem;
-            line-height: 1.5;
-            color: var(--text-primary);
-        }
-
-        .transaction-id br {
-            margin: 0.25rem 0;
-        }
-
-        .copy-btn {
-            margin-left: 0.25rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--text-title);
-            vertical-align: middle;
-            font-size: 1rem;
-            padding: 0.25rem;
-            transition: opacity 0.2s;
-        }
-
-        .copy-btn:hover {
-            opacity: 0.7;
-        }
-
-        .content-section {
-            max-width: 552px;
-            margin: 0 auto;
-            width: 100%;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            padding: 1rem;
-        }
-
-        .details-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.875rem;
-        }
-
-        .detail-row {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .detail-row:last-child {
-            border-bottom: none;
-        }
-
-        .detail-label {
-            font-size: 0.875rem;
-            color: var(--text-primary);
-        }
-
-        .detail-value {
-            text-align: right;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--text-title);
-            word-break: break-word;
-        }
-
-        .bonus-section {
-            grid-column: 1 / -1;
-            margin: 0.5rem 0;
-        }
-
-        .bonus-list {
-            list-style: none;
-            border: 1px solid var(--border-color);
-            border-radius: 5px;
-            background-color: var(--bg-panel);
-            padding: 0.75rem;
-        }
-
-        .bonus-item {
-            display: flex;
-            justify-content: space-between;
-            gap: 0.5rem;
-            padding: 0.75rem 0;
-            font-size: 0.875rem;
-        }
-
-        .bonus-item:not(:last-child) {
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .bonus-value {
-            text-align: right;
-            font-weight: 500;
-            display: flex;
-            gap: 0.25rem;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .diamond-icon {
-            width: 12px;
-            height: 12px;
-            object-fit: contain;
-        }
-
-        .btn-container {
-            margin-top: 1rem;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.375rem;
-            border-radius: 6px;
-            padding: 0.75rem 1.25rem;
-            border: none;
-            background-color: var(--primary-red);
-            color: white;
-            font-size: 1rem;
-            font-weight: 700;
-            height: 44px;
-            width: 100%;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.2s, border-color 0.2s;
-            text-align: center;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-red-hover);
-        }
-
-        footer {
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .footer-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-
-        .footer-text {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            text-align: center;
-        }
-
-        .footer-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        .footer-link:hover {
-            opacity: 0.7;
-        }
-
-        .divider {
-            width: 4px;
-            height: 4px;
-            background-color: var(--line-color);
-            display: inline-block;
-            margin: 0 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .details-grid {
-                grid-template-columns: 1fr;
+        @media (min-width: 768px) {
+            .md\:h-\[60px\] {
+                height: 60px;
             }
-
-            .bonus-section {
-                grid-column: 1;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 0.25rem;
-            }
-
-            .divider {
-                display: none;
-            }
-        }
-
-        .hidden {
-            display: none;
         }
     </style>
 </head>
-<body>
+<body class="dark bg-bg-base text-text-primary">
     <header>
         <div class="header-content">
             <a class="logo-container" href="/">
